@@ -30,7 +30,7 @@ const webpack = require('webpack');
 module.exports = {
 
     bail: true,
-    mode: 'production',
+    mode: 'development',
     stats: 'minimal',
 
     output: {
