@@ -143,7 +143,7 @@ Guacamole.Mouse = function Mouse(element) {
             Guacamole.Event.DOMEvent.cancelEvent(e);
             return;
         }
-        debugger;
+
         var button = MOUSE_BUTTONS[e.button];
         if (button)
             guac_mouse.press(button, e);

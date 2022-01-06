@@ -96,7 +96,6 @@
                         <id>default-minify</id>
                         <configuration>
                             <sourceDir>/</sourceDir>
-                            <!-- <targetDir>/${project.name}</targetDir> -->
                             <targetDir>/${project.build.finalName}</targetDir>
                             <charset>UTF-8</charset>
                             <closureCreateSourceMap>true</closureCreateSourceMap>
@@ -104,17 +103,9 @@
                             <sourceIncludes>
                                 <sourceInclude>modules/**/*.js</sourceInclude>
                             </sourceIncludes>
-                            <closureIncludeSourcesContent>true</closureIncludeSourcesContent>
                             <outputFilename>all.js</outputFilename>
-                            <closureSourceMapName>all.js.map</closureSourceMapName>
-                            <!-- <nosuffix>true</nosuffix> -->
-                            <!-- <jsFinalFile>all.js</jsFinalFile> -->
-
-                            <!-- <jsSourceFiles>
-                                <jsSourceFile>common/license.js</jsSourceFile> 
-                            </jsSourceFiles> -->
-
                             <includes>
+                                <includes>common/license.js</includes>
                                 <includes>modules/*.js</includes>
                             </includes>
 
