@@ -84,27 +84,39 @@
 
             <!-- JS/CSS Minification Plugin -->
             <plugin>
-                <groupId>com.github.buckelieg</groupId>
-                <artifactId>minify-maven-plugin</artifactId>
+                <groupId>com.github.blutorange</groupId>
+                <artifactId>closure-compiler-maven-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <baseSourceDir>./src/main/webapp</baseSourceDir>
+                    <baseTargetDir>${project.build.directory}</baseTargetDir>
+                </configuration>
                 <executions>
                     <execution>
                         <id>default-minify</id>
                         <configuration>
-
+                            <sourceDir>/</sourceDir>
+                            <!-- <targetDir>/${project.name}</targetDir> -->
+                            <targetDir>/${project.build.finalName}</targetDir>
                             <charset>UTF-8</charset>
-                            <jsEngine>CLOSURE</jsEngine>
+                            <closureCreateSourceMap>true</closureCreateSourceMap>
+                            <!-- <skipMinify>true</skipMinify> -->
+                            <sourceIncludes>
+                                <sourceInclude>modules/**/*.js</sourceInclude>
+                            </sourceIncludes>
+                            <closureIncludeSourcesContent>true</closureIncludeSourcesContent>
+                            <outputFilename>all.js</outputFilename>
+                            <closureSourceMapName>all.js.map</closureSourceMapName>
+                            <!-- <nosuffix>true</nosuffix> -->
+                            <!-- <jsFinalFile>all.js</jsFinalFile> -->
 
-                            <jsSourceDir>/</jsSourceDir>
-                            <jsTargetDir>/</jsTargetDir>
-                            <jsFinalFile>all.js</jsFinalFile>
-
-                            <jsSourceFiles>
+                            <!-- <jsSourceFiles>
                                 <jsSourceFile>common/license.js</jsSourceFile> 
-                            </jsSourceFiles>
+                            </jsSourceFiles> -->
 
-                            <jsSourceIncludes>
-                                <jsSourceInclude>modules/**/*.js</jsSourceInclude>
-                            </jsSourceIncludes>
+                            <includes>
+                                <includes>modules/*.js</includes>
+                            </includes>
 
                         </configuration>
                         <goals>
@@ -131,7 +143,7 @@
                         <version>2.1.1</version>
                     </phantomjs>
                     <sourceIncludes>
-                        <sourceInclude>**/*.min.js</sourceInclude>
+                        <sourceInclude>**/*.js</sourceInclude>
                     </sourceIncludes>
                     <jsSrcDir>${project.build.directory}/${project.build.finalName}</jsSrcDir>
                 </configuration>
