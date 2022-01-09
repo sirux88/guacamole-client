@@ -58,6 +58,7 @@
         "ACTION_ACKNOWLEDGE"               : "@:APP.ACTION_ACKNOWLEDGE",
         "ACTION_CANCEL"                    : "@:APP.ACTION_CANCEL",
         "ACTION_CLEAR_COMPLETED_TRANSFERS" : "Clear",
+        "ACTION_FULLSCREEN"                : "Fullscreen",
         "ACTION_CONTINUE"                  : "@:APP.ACTION_CONTINUE",
         "ACTION_DISCONNECT"                : "Disconnect",
         "ACTION_LOGOUT"                    : "@:APP.ACTION_LOGOUT",
