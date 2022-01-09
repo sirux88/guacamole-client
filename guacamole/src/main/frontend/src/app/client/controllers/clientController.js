@@ -44,7 +44,7 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
     const requestService         = $injector.get('requestService');
     const tunnelService          = $injector.get('tunnelService');
     const userPageService        = $injector.get('userPageService');
-
+    const fullscreenService      = $injector.get('guacFullscreen');
     /**
      * The minimum number of pixels a drag gesture must move to result in the
      * menu being shown or hidden.
@@ -647,6 +647,7 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
             $scope.clientGroup.clients.forEach(client => {
                 if (client.clientProperties.focused)
                     client.client.disconnect();
+                    fullscreenService.setFullscreenMode(false);
             });
         }
 
@@ -683,8 +684,22 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         callback  : $scope.disconnect
     };
 
+    /**
+     * Action that locks the keyboard using the Keyboard Lock API within the
+     * current client, and then closes the menu.
+     */
+    var FULLSCREEN_MENU_ACTION = {
+        name      : 'CLIENT.ACTION_FULLSCREEN',
+        classname : 'fullscreen action',
+        callback  : function fullscreen() {
+            
+            fullscreenService.toggleFullscreenMode();
+            $scope.menu.shown = false;
+        }
+    };
+
     // Set client-specific menu actions
-    $scope.clientMenuActions = [ DISCONNECT_MENU_ACTION ];
+    $scope.clientMenuActions = [ DISCONNECT_MENU_ACTION,FULLSCREEN_MENU_ACTION ];
 
     /**
      * @borrows Protocol.getNamespace
