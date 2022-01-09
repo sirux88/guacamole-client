@@ -96,7 +96,9 @@ Guacamole.Mouse = function Mouse(element) {
     var MOUSE_BUTTONS = [
         Guacamole.Mouse.State.Buttons.LEFT,
         Guacamole.Mouse.State.Buttons.MIDDLE,
-        Guacamole.Mouse.State.Buttons.RIGHT
+        Guacamole.Mouse.State.Buttons.RIGHT,
+        Guacamole.Mouse.State.Buttons.FOURTH,
+        Guacamole.Mouse.State.Buttons.FIFTH,
     ];
 
     /**
@@ -424,6 +426,23 @@ Guacamole.Mouse.State = function State(template) {
     this.right = template.right || false;
 
     /**
+     * Whether the fourth mouse button is currently pressed.
+     *
+     * @type {!boolean}
+     * @default false
+     */
+     this.fourth = template.fourth || false;
+     
+     /**
+     * Whether the fifth mouse button is currently pressed.
+     *
+     * @type {!boolean}
+     * @default false
+     */
+    this.fifth = template.fifth || false;
+
+
+    /**
      * Whether the up mouse button is currently pressed. This is the fourth
      * mouse button, associated with upward scrolling of the mouse scroll
      * wheel.
@@ -480,6 +499,24 @@ Guacamole.Mouse.State.Buttons = {
      * @type {!string}
      */
     RIGHT : 'right',
+
+    /**
+     * The name of the {@link Guacamole.Mouse.State} property representing the
+     * right mouse button.
+     *
+     * @constant
+     * @type {!string}
+     */
+    FOURTH : 'fourth',
+
+    /**
+     * The name of the {@link Guacamole.Mouse.State} property representing the
+     * right mouse button.
+     *
+     * @constant
+     * @type {!string}
+     */
+    FIFTH : 'fifth',
 
     /**
      * The name of the {@link Guacamole.Mouse.State} property representing the
@@ -654,6 +691,10 @@ Guacamole.Mouse.Event.Target = function MouseEventTarget() {
      *     The DOM events that are related to the mouse button press, if any.
      */
     this.press = function press(button, events) {
+        // Handle 4/5 mouse button only on true fullscreen mode
+        if((button==Guacamole.Mouse.State.Buttons.FIFTH || button==Guacamole.Mouse.State.Buttons.FOURTH)&&!document.fullscreenElement) 
+            return;
+        
         if (!this.currentState[button]) {
             this.currentState[button] = true;
             this.dispatch(new Guacamole.Mouse.Event('mousedown', this.currentState, events));
@@ -676,6 +717,10 @@ Guacamole.Mouse.Event.Target = function MouseEventTarget() {
      *     The DOM events related to the mouse button release, if any.
      */
     this.release = function release(button, events) {
+        // Handle 4/5 mouse button only on true fullscreen mode
+        if((button==Guacamole.Mouse.State.Buttons.FIFTH || button==Guacamole.Mouse.State.Buttons.FOURTH)&&!document.fullscreenElement) 
+            return;
+
         if (this.currentState[button]) {
             this.currentState[button] = false;
             this.dispatch(new Guacamole.Mouse.Event('mouseup', this.currentState, events));
