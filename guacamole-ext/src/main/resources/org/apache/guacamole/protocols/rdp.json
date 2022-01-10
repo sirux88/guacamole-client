@@ -162,6 +162,11 @@
                     "name"    : "read-only",
                     "type"    : "BOOLEAN",
                     "options" : [ "true" ]
+                }, 
+                {
+                    "name"    : "allow-multiple-display-usage",
+                    "type"    : "BOOLEAN",
+                    "options" : [ "true" ]
                 }
             ]
         },
