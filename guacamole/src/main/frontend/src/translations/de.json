@@ -12,6 +12,7 @@
         "ACTION_DELETE_SESSIONS"    : "Sitzung beenden",
         "ACTION_DOWNLOAD"           : "Download",
         "ACTION_LOGIN"              : "Anmelden",
+        "ACTION_LOGIN_AGAIN"        : "Neuanmelden",
         "ACTION_LOGOUT"             : "Abmelden",
         "ACTION_MANAGE_CONNECTIONS" : "Verbindungen",
         "ACTION_MANAGE_PREFERENCES" : "Einstellungen",
@@ -21,12 +22,14 @@
         "ACTION_MANAGE_USER_GROUPS" : "Gruppen",
         "ACTION_NAVIGATE_BACK"      : "Zurück",
         "ACTION_NAVIGATE_HOME"      : "Startseite",
+        "ACTION_PAUSE"              : "Pause",
+        "ACTION_PLAY"               : "Abspielen",
         "ACTION_SAVE"               : "Speichern",
         "ACTION_SEARCH"             : "Suche",
         "ACTION_SHARE"              : "Teilen",
         "ACTION_UPDATE_PASSWORD"    : "Passwort aktualisieren",
         "ACTION_VIEW_HISTORY"       : "Verlauf",
-
+        "ACTION_VIEW_RECORDING"     : "Ansicht",
         "DIALOG_HEADER_ERROR" : "Fehler",
 
         "ERROR_PAGE_UNAVAILABLE"  : "Ein Fehler ist aufgetreten und die gewünschte Aktion kann nicht fortgesetzt werden. Bitte informieren Sie ihren Systemadministrator oder prüfen Sie die Logdateien, falls das Problem bestehen bleiben sollte.",
@@ -41,10 +44,10 @@
         "FORMAT_DATE_TIME_PRECISE" : "dd-MM-yyyy HH:mm:ss",
 
         "INFO_ACTIVE_USER_COUNT" : "In Benutzung durch {USERS} Benutzer.",
+        "INFO_LOGGED_OUT"        : "Sie wurden ausgeloggt.",
 
         "TEXT_ANONYMOUS_USER"   : "Anonymer Benutzer",
         "TEXT_HISTORY_DURATION" : "{VALUE} {UNIT, select, second{{VALUE, plural, one{Sekunde} other{Sekunden}}} minute{{VALUE, plural, one{Minute} other{Minuten}}} hour{{VALUE, plural, one{Stunde} other{Stunden}}} day{{VALUE, plural, one{Tag} other{Tage}}} other{}}"
-
     },
 
     "CLIENT" : {
@@ -144,6 +147,20 @@
         "TEXT_FILE_TRANSFER_PROGRESS"     : "{PROGRESS} {UNIT, select, b{B} kb{KB} mb{MB} gb{GB} other{}}",
 
         "URL_OSK_LAYOUT" : "layouts/de-de-qwertz.json"
+
+    },
+
+    "COLOR_SCHEME" : {
+
+        "ACTION_HIDE_DETAILS" : "Anzeigen",
+        "ACTION_SHOW_DETAILS" : "Ausblenden",
+
+        "FIELD_HEADER_BACKGROUND" : "Hintergrund",
+        "FIELD_HEADER_FOREGROUND" : "Vordergrund",
+
+        "FIELD_OPTION_CUSTOM" : "Benutzerdefiniert...",
+
+        "SECTION_HEADER_DETAILS" : "Details:"
 
     },
 
@@ -361,7 +378,60 @@
         "TEXT_CONFIRM_DELETE" : "Dieser Löschvorgang ist unumkehrbar. Möchten Sie diese Benutzergruppe wirklich löschen?"
 
     },
-    
+
+    "PLAYER" : {
+
+        "INFO_LOADING_RECORDING" : "Die Aufnahme wird momentan geladen. Bitte warten...",
+        "INFO_SEEK_IN_PROGRESS"  : "Spule zu gewünschten Stelle. Bitte warten..."
+
+    },
+
+    "PROTOCOL_KUBERNETES" : {
+
+        "FIELD_HEADER_BACKSPACE"       : "Rücktaste sendet:",
+        "FIELD_HEADER_CA_CERT"         : "Zertifikate der Zertifizierungsstelle:",
+        "FIELD_HEADER_CLIENT_CERT"     : "Client Zertifikat:",
+        "FIELD_HEADER_CLIENT_KEY"      : "Client Schlüssel:",
+        "FIELD_HEADER_COLOR_SCHEME"    : "Farbschema:",
+        "FIELD_HEADER_CONTAINER"       : "Container Name:",
+        "FIELD_HEADER_CREATE_RECORDING_PATH"  : "Aufname-Pfad automatisch erstellen:",
+        "FIELD_HEADER_CREATE_TYPESCRIPT_PATH" : "Typescript-Pfad automatisch erstellen:",
+        "FIELD_HEADER_EXEC_COMMAND"    : "Befehl (exec):",
+        "FIELD_HEADER_FONT_NAME"       : "Schriftname:",
+        "FIELD_HEADER_FONT_SIZE"       : "Schriftgröße:",
+        
+        "FIELD_HEADER_IGNORE_CERT"     : "Server-Zertifikate ignorieren:",
+        
+        "FIELD_HEADER_POD"             : "Pod Name:",
+        
+        "FIELD_HEADER_RECORDING_EXCLUDE_MOUSE"  : "Maus auschließen:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_OUTPUT" : "Grafik/Streams ausschließen:",
+        "FIELD_HEADER_RECORDING_INCLUDE_KEYS"   : "Tasten-Ereignisse einschließen:",
+        "FIELD_HEADER_RECORDING_NAME"  : "Aufnahme-Name:",
+        "FIELD_HEADER_RECORDING_PATH"  : "Aufnahme-Pfad:",
+        "FIELD_HEADER_SCROLLBACK"      : "Maximale Scrollback Größe:",
+        "FIELD_HEADER_TYPESCRIPT_NAME" : "Typescript Name:",
+        "FIELD_HEADER_TYPESCRIPT_PATH" : "Typescript Pfad:",
+        "FIELD_HEADER_USE_SSL"         : "SSL/TLS verwenden",
+
+        "FIELD_OPTION_BACKSPACE_EMPTY" : "",
+        "FIELD_OPTION_BACKSPACE_8"     : "Rücktaste (Strg-H)",
+        "FIELD_OPTION_BACKSPACE_127"   : "Löschen (Strg-?)",
+
+        "FIELD_OPTION_COLOR_SCHEME_BLACK_WHITE" : "Schwarz auf Weiß",
+        "FIELD_OPTION_COLOR_SCHEME_GRAY_BLACK"  : "Grau auf Schwarz",
+        "FIELD_OPTION_COLOR_SCHEME_GREEN_BLACK" : "Grün auf Schwarz",
+        "FIELD_OPTION_COLOR_SCHEME_WHITE_BLACK" : "Weiß auf Schwarz",
+
+        "SECTION_HEADER_AUTHENTICATION" : "Authentifizierung",
+        "SECTION_HEADER_BEHAVIOR"       : "Konsolenverhalten",
+
+        "SECTION_HEADER_RECORDING"      : "Monitor-Aufnahme",
+        "SECTION_HEADER_TYPESCRIPT"     : "Typescript (Text Session Aufnahme)",
+        "SECTION_HEADER_NETWORK"        : "Netzwerk"
+
+    },
+
     "PROTOCOL_RDP" : {
 
         "FIELD_HEADER_CLIENT_NAME"     : "Client-Name:",
@@ -372,6 +442,10 @@
         "FIELD_HEADER_CREATE_RECORDING_PATH": "Aufzeichnungspfad automatisch erstellen:",
         "FIELD_HEADER_DISABLE_AUDIO"   : "Audio deaktivieren:",
         "FIELD_HEADER_DISABLE_AUTH"    : "Authentifizierung deaktivieren:",
+        "FIELD_HEADER_DISABLE_COPY"    : "Kopieren aus Remotesitzung deaktivieren:",
+        "FIELD_HEADER_DISABLE_DOWNLOAD" : "Dateidownload deaktivieren:",
+        "FIELD_HEADER_DISABLE_PASTE"   : "Einfügen vom Client deaktivieren:",
+        "FIELD_HEADER_DISABLE_UPLOAD"   : "Dateiupload deaktivieren:",
         "FIELD_HEADER_DOMAIN"          : "Domäne:",
         "FIELD_HEADER_DPI"             : "Auflösung (DPI):",
         "FIELD_HEADER_DRIVE_NAME"      : "Laufwerksname:",
@@ -385,10 +459,13 @@
         "FIELD_HEADER_DISABLE_BITMAP_CACHING"     : "Bitmap-Zwischenspeicherung deaktivieren:",
         "FIELD_HEADER_DISABLE_OFFSCREEN_CACHING"  : "Offscreen-Caching deaktivieren:",
         "FIELD_HEADER_DISABLE_GLYPH_CACHING"      : "Glyph-Caching deaktivieren:",
+        "FIELD_HEADER_DISABLE_GFX"                : "Grafik-Pipline-Erweiterung deaktivieren:",
         "FIELD_HEADER_ENABLE_PRINTING"            : "Druckunterstützung aktivieren:",
         "FIELD_HEADER_ENABLE_SFTP"     : "SFTP aktivieren:",
         "FIELD_HEADER_ENABLE_THEMING"             : "Themen-Unterstützung aktivieren:",
+        "FIELD_HEADER_ENABLE_TOUCH"               : "Multi-Touch-Unterstützung aktivieren:",
         "FIELD_HEADER_ENABLE_WALLPAPER"           : "Desktophintergrund aktivieren:",
+        "FIELD_HEADER_FORCE_LOSSLESS"             : "Verlustlose Kompression erzweingen:",
         "FIELD_HEADER_GATEWAY_DOMAIN"   : "Domäne:",
         "FIELD_HEADER_GATEWAY_HOSTNAME" : "Hostname:",
         "FIELD_HEADER_GATEWAY_PASSWORD" : "Passwort:",
@@ -399,6 +476,7 @@
         "FIELD_HEADER_IGNORE_CERT"     : "Serverzertifikat ignorieren:",
         "FIELD_HEADER_INITIAL_PROGRAM" : "Startprogramme:",
         "FIELD_HEADER_LOAD_BALANCE_INFO" : "Lastverteilungs-Info/Cookie:",
+        "FIELD_HEADER_NORMALIZE_CLIPBOARD" : "Zeilenende:",
         "FIELD_HEADER_PASSWORD"        : "Passwort:",
         "FIELD_HEADER_PORT"            : "Port:",
         "FIELD_HEADER_PRINTER_NAME"    : "Name des weitergeleiteten Druckers:",
@@ -417,6 +495,7 @@
         "FIELD_HEADER_SECURITY"        : "Sicherheitsmodus:",
         "FIELD_HEADER_SERVER_LAYOUT"   : "Tastaturlayout:",
         "FIELD_HEADER_SFTP_DIRECTORY"             : "Standardverzeichnis:",
+        "FIELD_HEADER_SFTP_DISABLE_DOWNLOAD"      : "Dateidownload deaktivieren:",
         "FIELD_HEADER_SFTP_HOST_KEY"              : "Öffentlicher Schlüssel des Host (Base64):",
         "FIELD_HEADER_SFTP_HOSTNAME"              : "Hostname:",
         "FIELD_HEADER_SFTP_SERVER_ALIVE_INTERVAL" : "SFTP keepalive Intervall:",
@@ -425,10 +504,19 @@
         "FIELD_HEADER_SFTP_PORT"                  : "Port:",
         "FIELD_HEADER_SFTP_PRIVATE_KEY"           : "Privater Schlüssel:",
         "FIELD_HEADER_SFTP_ROOT_DIRECTORY"        : "SFTP-Wurzelverzeichnis:",
+        "FIELD_HEADER_SFTP_DISABLE_UPLOAD"        : "Dateiupload deaktivieren:",
         "FIELD_HEADER_SFTP_USERNAME"              : "Benutzername¨:",
         "FIELD_HEADER_STATIC_CHANNELS" : "Statische Kanäle:",
+        "FIELD_HEADER_TIMEZONE"        : "Zeitzone:",
         "FIELD_HEADER_USERNAME"        : "Benutzername:",
         "FIELD_HEADER_WIDTH"           : "Breite:",
+        "FIELD_HEADER_WOL_BROADCAST_ADDR" : "Broadcast Adresse für WoL-Paket:",
+        "FIELD_HEADER_WOL_MAC_ADDR"       : "MAC Adresse des Remote Hosts:",
+        "FIELD_HEADER_WOL_SEND_PACKET"    : "WoL Paket senden:",
+        "FIELD_HEADER_WOL_UDP_PORT"       : "UDP-Port für WoL Paket: ",
+        "FIELD_HEADER_WOL_WAIT_TIME"      : "Wartezeit für Host-Boot:",
+
+        "FIELD_OPTION_NORMALIZE_CLIPBOARD_PRESERVE" : "Belassen",
 
         "FIELD_OPTION_COLOR_DEPTH_16"    : "Hohe Farbtiefe (16-bit)",
         "FIELD_OPTION_COLOR_DEPTH_24"    : "Echtfarben (24-bit)",
@@ -446,20 +534,27 @@
         "FIELD_OPTION_SECURITY_RDP"   : "RDP Verschlüsselung",
         "FIELD_OPTION_SECURITY_TLS"   : "TLS Verschlüsselung",
 
-        "FIELD_OPTION_SERVER_LAYOUT_DA_DK_QWERTY": "Dänisch (Qwerty)",
+
+        "FIELD_OPTION_SERVER_LAYOUT_DE_CH_QWERTZ" : "Deutsch (Schweiz) (Qwertz)",
         "FIELD_OPTION_SERVER_LAYOUT_DE_DE_QWERTZ" : "Deutsch (Qwertz)",
         "FIELD_OPTION_SERVER_LAYOUT_EMPTY"        : "",
         "FIELD_OPTION_SERVER_LAYOUT_EN_GB_QWERTY" : "Englisch (GB) (Qwerty)",
         "FIELD_OPTION_SERVER_LAYOUT_EN_US_QWERTY" : "Englisch (US) (Qwerty)",
         "FIELD_OPTION_SERVER_LAYOUT_ES_ES_QWERTY" : "Spanisch (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_ES_LATAM_QWERTY" : "Latein-Amerikanisch (Qwerty)",
         "FIELD_OPTION_SERVER_LAYOUT_FAILSAFE"     : "Unicode",
-        "FIELD_OPTION_SERVER_LAYOUT_FR_CH_QWERTZ" : "Schweiz/Französisch (Qwertz)",
+        "FIELD_OPTION_SERVER_LAYOUT_FR_BE_AZERTY" : "Französisch (Belgien) (Azerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_FR_CA_QWERTY" : "Französisch (Kanada) (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_FR_CH_QWERTZ" : "Französisch (Schweiz) (Qwertz)",
         "FIELD_OPTION_SERVER_LAYOUT_FR_FR_AZERTY" : "Französisch (Azerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_HU_HU_QWERTZ" : "Ungarisch (Qwertz)",
         "FIELD_OPTION_SERVER_LAYOUT_IT_IT_QWERTY" : "Italienisch (Qwerty)",
         "FIELD_OPTION_SERVER_LAYOUT_JA_JP_QWERTY" : "Japanisch (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_NO_NO_QWERTY" : "Norwegisch (Qwerty)",
         "FIELD_OPTION_SERVER_LAYOUT_PL_PL_QWERTY" : "Polnisches (Qwerty)",
         "FIELD_OPTION_SERVER_LAYOUT_PT_BR_QWERTY" : "Portugiesisch (BR) (Qwerty)",
         "FIELD_OPTION_SERVER_LAYOUT_SV_SE_QWERTY" : "Schwedisch (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_DA_DK_QWERTY": "Dänisch (Qwerty)",
         "FIELD_OPTION_SERVER_LAYOUT_TR_TR_QWERTY" : "Türkisch (Qwerty)",
 
         "NAME" : "RDP",
@@ -470,7 +565,7 @@
         "SECTION_HEADER_DEVICE_REDIRECTION" : "Geräteumleitung",
         "SECTION_HEADER_DISPLAY"            : "Bildschirm",
         "SECTION_HEADER_GATEWAY"            : "Remote Desktop Gateway",
-        "SECTION_HEADER_LOAD_BALANCING"     : "Load Balancing",
+        "SECTION_HEADER_LOAD_BALANCING"     : "Lastausgleich",
         "SECTION_HEADER_NETWORK"            : "Netzwerk",
         "SECTION_HEADER_PERFORMANCE"        : "Geschwindigkeit",
         "SECTION_HEADER_PRECONNECTION_PDU"  : "Preconnection PDU / Hyper-V",
@@ -487,16 +582,20 @@
         "FIELD_HEADER_COMMAND"      : "Befehl ausführen:",
         "FIELD_HEADER_CREATE_RECORDING_PATH" : "Bildschirmaufzeichnungspfad automatisch erzeugen:",
         "FIELD_HEADER_CREATE_TYPESCRIPT_PATH" : "Textaufzeichnungspfad automatisch erzeugen:",
+        "FIELD_HEADER_DISABLE_COPY"  : "Kopieren vom Terminal deaktivieren:",
+        "FIELD_HEADER_DISABLE_PASTE" : "Einfügen vom Client deaktivieren:",
         "FIELD_HEADER_FONT_NAME"      : "Schriftart:",
         "FIELD_HEADER_FONT_SIZE"      : "Schriftgröße:",
         "FIELD_HEADER_ENABLE_SFTP"   : "SFTP aktivieren:",
         "FIELD_HEADER_HOST_KEY"      : "Öffentlicher Schlüssel des Hosts (Base64):",
         "FIELD_HEADER_HOSTNAME"      : "Hostname:",
+        "FIELD_HEADER_LOCALE"        : "Sprache ($LANG):",
         "FIELD_HEADER_USERNAME"      : "Benutzername:",
         "FIELD_HEADER_PASSWORD"      : "Passwort:",
         "FIELD_HEADER_PASSPHRASE"    : "Passphrase:",
         "FIELD_HEADER_PORT"          : "Port:",
         "FIELD_HEADER_PRIVATE_KEY"   : "Privater Schlüssel:",
+
         "FIELD_HEADER_READ_ONLY"     : "Nur-Lesen:",
         "FIELD_HEADER_RECORDING_EXCLUDE_MOUSE"  : "Mausaufzeichnung deaktivieren:",
         "FIELD_HEADER_RECORDING_EXCLUDE_OUTPUT" : "Aufzeichnung der Anzeige deaktivieren:",
@@ -504,10 +603,18 @@
         "FIELD_HEADER_RECORDING_NAME" : "Aufzeichnungsname:",
         "FIELD_HEADER_RECORDING_PATH" : "Aufzeichnungspfad:",
         "FIELD_HEADER_SERVER_ALIVE_INTERVAL" : "Server keepalive Intervall:",
+        "FIELD_HEADER_SFTP_DISABLE_DOWNLOAD" : "Dateidownload deaktivieren:",
         "FIELD_HEADER_SFTP_ROOT_DIRECTORY"   : "SFTP-Wurzelverzeichnis:",
+        "FIELD_HEADER_SFTP_DISABLE_UPLOAD"   : "Dateiupload deaktivieren:",
         "FIELD_HEADER_TERMINAL_TYPE"   : "Terminaltyp:",
+        "FIELD_HEADER_TIMEZONE"        : "Zeitzone ($TZ):",
         "FIELD_HEADER_TYPESCRIPT_NAME" : "Textaufzeichnungsname:",
         "FIELD_HEADER_TYPESCRIPT_PATH" : "Textaufzeichnungspfad:",
+        "FIELD_HEADER_WOL_BROADCAST_ADDR" : "Broadcast Adresse für WoL-Paket:",
+        "FIELD_HEADER_WOL_MAC_ADDR"       : "MAC Adresse des Remote Hosts:",
+        "FIELD_HEADER_WOL_SEND_PACKET"    : "WoL Paket senden:",
+        "FIELD_HEADER_WOL_UDP_PORT"       : "UDP-Port für WoL Paket: ",
+        "FIELD_HEADER_WOL_WAIT_TIME"      : "Wartezeit für Host-Boot:",
 
         "FIELD_OPTION_BACKSPACE_EMPTY" : "",
         "FIELD_OPTION_BACKSPACE_8"     : "Rücktaste (Strg-H)",
@@ -563,6 +670,8 @@
         "FIELD_HEADER_COLOR_SCHEME"   : "Farbschema:",
         "FIELD_HEADER_CREATE_RECORDING_PATH" : "Bildschirmaufzeichnungspfad automatisch erzeugen:",
         "FIELD_HEADER_CREATE_TYPESCRIPT_PATH" : "Textaufzeichnungspfad automatisch erzeugen:",
+        "FIELD_HEADER_DISABLE_COPY"   : "Kopieren vom Terminal deaktivieren:",
+        "FIELD_HEADER_DISABLE_PASTE"  : "Einfügen vom Client deaktivieren:",
         "FIELD_HEADER_FONT_NAME"      : "Schriftart:",
         "FIELD_HEADER_FONT_SIZE"      : "Schriftgröße:",
         "FIELD_HEADER_HOSTNAME"       : "Hostname:",
@@ -579,9 +688,15 @@
         "FIELD_HEADER_RECORDING_INCLUDE_KEYS"   : "Tastendrücke aufzeichnen:",
         "FIELD_HEADER_RECORDING_NAME" : "Aufzeichnungsname:",
         "FIELD_HEADER_RECORDING_PATH" : "Aufzeichnungspfad:",
+
         "FIELD_HEADER_TERMINAL_TYPE"   : "Terminaltyp:",
         "FIELD_HEADER_TYPESCRIPT_NAME" : "Textaufzeichnungsname:",
         "FIELD_HEADER_TYPESCRIPT_PATH" : "Textaufzeichnungspfad:",
+        "FIELD_HEADER_WOL_BROADCAST_ADDR" : "Broadcast Adresse für WoL-Paket:",
+        "FIELD_HEADER_WOL_MAC_ADDR"       : "MAC Adresse des Remote Hosts:",
+        "FIELD_HEADER_WOL_SEND_PACKET"    : "WoL Paket senden:",
+        "FIELD_HEADER_WOL_UDP_PORT"       : "UDP-Port für WoL Paket: ",
+        "FIELD_HEADER_WOL_WAIT_TIME"      : "Wartezeit für Host-Boot:",
 
         "FIELD_OPTION_BACKSPACE_EMPTY" : "",
         "FIELD_OPTION_BACKSPACE_8"     : "Rücktaste (Strg-H)",
@@ -638,8 +753,11 @@
         "FIELD_HEADER_CURSOR"           : "Cursor:",
         "FIELD_HEADER_DEST_HOST"        : "Ziel Host:",
         "FIELD_HEADER_DEST_PORT"        : "Ziel Port:",
+        "FIELD_HEADER_DISABLE_COPY"   : "Kopieren vom Terminal deaktivieren:",
+        "FIELD_HEADER_DISABLE_PASTE"  : "Einfügen vom Client deaktivieren:",
         "FIELD_HEADER_ENABLE_AUDIO"     : "Audio aktivieren:",
         "FIELD_HEADER_ENABLE_SFTP"      : "SFTP aktivieren:",
+        "FIELD_HEADER_FORCE_LOSSLESS"   : "Verlustlose Kompression erzwingen:",
         "FIELD_HEADER_HOSTNAME"         : "Hostname:",
         "FIELD_HEADER_USERNAME"         : "Benutzername:",
         "FIELD_HEADER_PASSWORD"         : "Passwort:",
@@ -651,16 +769,23 @@
         "FIELD_HEADER_RECORDING_NAME" : "Aufzeichnungsname:",
         "FIELD_HEADER_RECORDING_PATH" : "Aufzeichnungspfad:",
         "FIELD_HEADER_SFTP_DIRECTORY"             : "Standard Uploadverzeichnis:",
+        "FIELD_HEADER_SFTP_DISABLE_DOWNLOAD"      : "Dateidownload deaktivieren:",
         "FIELD_HEADER_SFTP_HOST_KEY"              : "Öffentlicher Schlüssel des Host (Base64):",
         "FIELD_HEADER_SFTP_HOSTNAME"              : "Hostname:",
-        "FIELD_HEADER_SFTP_ROOT_DIRECTORY": "SFTP-Wurzelverzeichnis:",
         "FIELD_HEADER_SFTP_SERVER_ALIVE_INTERVAL" : "SFTP keepalive Intervall:",
-        "FIELD_HEADER_SFTP_PASSPHRASE"  : "Passphrase:",
-        "FIELD_HEADER_SFTP_PASSWORD"    : "Passwort:",
-        "FIELD_HEADER_SFTP_PORT"        : "Port:",
-        "FIELD_HEADER_SFTP_PRIVATE_KEY" : "Privater Schlüssel:",
-        "FIELD_HEADER_SFTP_USERNAME"    : "Benutzername:",
+        "FIELD_HEADER_SFTP_PASSPHRASE"            : "Passphrase:",
+        "FIELD_HEADER_SFTP_PASSWORD"              : "Passwort:",
+        "FIELD_HEADER_SFTP_PORT"                  : "Port:",
+        "FIELD_HEADER_SFTP_PRIVATE_KEY"           : "Privater Schlüssel:",
+        "FIELD_HEADER_SFTP_ROOT_DIRECTORY"        : "SFTP-Wurzelverzeichnis:",
+        "FIELD_HEADER_SFTP_DISABLE_UPLOAD"        : "Disable file upload:",
+        "FIELD_HEADER_SFTP_USERNAME"              : "Benutzername:",
         "FIELD_HEADER_SWAP_RED_BLUE"    : "Vertausche rot/blau Komponenten:",
+        "FIELD_HEADER_WOL_BROADCAST_ADDR" : "Broadcast Adresse für WoL-Paket:",
+        "FIELD_HEADER_WOL_MAC_ADDR"       : "MAC Adresse des Remote Hosts:",
+        "FIELD_HEADER_WOL_SEND_PACKET"    : "WoL Paket senden:",
+        "FIELD_HEADER_WOL_UDP_PORT"       : "UDP-Port für WoL Paket: ",
+        "FIELD_HEADER_WOL_WAIT_TIME"      : "Wartezeit für Host-Boot:",
 
         "FIELD_OPTION_COLOR_DEPTH_8"     : "256 Farben",
         "FIELD_OPTION_COLOR_DEPTH_16"    : "Hohe Farbtiefe (16-bit)",
@@ -746,6 +871,7 @@
 
         "ACTION_ACKNOWLEDGE"        : "@:APP.ACTION_ACKNOWLEDGE",
         "ACTION_CANCEL"             : "@:APP.ACTION_CANCEL",
+        "ACTION_SAVE"               : "@:APP.ACTION_SAVE",
         "ACTION_UPDATE_PASSWORD"    : "@:APP.ACTION_UPDATE_PASSWORD",
 
         "DIALOG_HEADER_ERROR"    : "@:APP.DIALOG_HEADER_ERROR",
@@ -758,6 +884,7 @@
         "FIELD_HEADER_PASSWORD_OLD"       : "Aktuelles Passwort:",
         "FIELD_HEADER_PASSWORD_NEW"       : "Neues Passwort:",
         "FIELD_HEADER_PASSWORD_NEW_AGAIN" : "Passwort wiederholen:",
+        "FIELD_HEADER_TIMEZONE"           : "Zeitzone:",
         "FIELD_HEADER_USERNAME"           : "Benutzername:",
         
         "HELP_DEFAULT_INPUT_METHOD" : "Die Standardeingabemethode bestimmt wie Tastaturereignisse an Guacamole weitergeleitet werden. Eine Änderung dieser Einstellung kann erforderlich sein, wenn ein mobiles Gerät verwendet wird oder bei der Eingabe durch einen IME. Dieses Verhalten kann im Menü innerhalb der Guacamole Verbindung geändert werden.",
@@ -765,12 +892,13 @@
         "HELP_INPUT_METHOD_NONE"    : "@:CLIENT.HELP_INPUT_METHOD_NONE",
         "HELP_INPUT_METHOD_OSK"     : "@:CLIENT.HELP_INPUT_METHOD_OSK",
         "HELP_INPUT_METHOD_TEXT"    : "@:CLIENT.HELP_INPUT_METHOD_TEXT",
-        "HELP_LANGUAGE"             : "Um die Spracheinstellungen von Guacamole zu ändern,  wählen Sie eine der verfügbaren Sprachen.",
+        "HELP_LOCALE"             : "Um die Spracheinstellungen von Guacamole zu ändern,  wählen Sie eine der verfügbaren Sprachen.",
         "HELP_MOUSE_MODE_ABSOLUTE"  : "@:CLIENT.HELP_MOUSE_MODE_ABSOLUTE",
         "HELP_MOUSE_MODE_RELATIVE"  : "@:CLIENT.HELP_MOUSE_MODE_RELATIVE",
         "HELP_UPDATE_PASSWORD"      : "Wenn Sie das Passwort ändern wollen, geben Sie das aktuelle und das gewünschte Passwort ein und klicken Sie auf \"Ändere Passwort\". Die Änderung wird sofort wirksam.",
 
         "INFO_PASSWORD_CHANGED" : "Passwort geändert.",
+        "INFO_PREFERENCE_ATTRIBUTES_CHANGED" : "Benutzereinstellungen gespeichert.",
 
         "NAME_INPUT_METHOD_NONE" : "@:CLIENT.NAME_INPUT_METHOD_NONE",
         "NAME_INPUT_METHOD_OSK"  : "@:CLIENT.NAME_INPUT_METHOD_OSK",
