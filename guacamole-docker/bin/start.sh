@@ -1246,6 +1246,33 @@ if [ -n "$LOGBACK_LEVEL" ]; then
     sed -i "s/level=\"info\"/level=\"$LOGBACK_LEVEL\"/" $GUACAMOLE_HOME/logback.xml
 fi
 
+# Set java truststore and truststore password if specified
+if [ -n "$JAVA_TRUSTSTORE_FILE" ]; then
+    
+    if [ -z "$JAVA_TRUSTSTORE_PASSWORD" ]; then
+        cat <<END
+FATAL: Missing required environment variables
+-----------------------------------------------------------------------------------
+If using a java truststore file, you must provide each of the
+following environment variables:
+
+    JAVA_TRUSTSTORE_FILE        The truststore file to be used.
+
+    JAVA_TRUSTSTORE_PASSWORD    The password for the specified truststore file
+END
+        exit 1;
+    fi
+
+    CATALINA_OPTS="$CATALINA_OPTS -Djavax.net.ssl.trustStore=$JAVA_TRUSTSTORE_FILE"
+    CATALINA_OPTS="$CATALINA_OPTS -Djavax.net.ssl.trustStorePassword=$JAVA_TRUSTSTORE_PASSWORD"
+
+    if [ -n "$JAVA_TRUSTSTORE_TYPE" ]; then
+        CATALINA_OPTS="$CATALINA_OPTS -Djavax.net.ssl.trustStoreType=$JAVA_TRUSTSTORE_TYPE"
+    fi
+
+    export CATALINA_OPTS
+fi
+
 #
 # Finally start Guacamole (under Tomcat)
 #
