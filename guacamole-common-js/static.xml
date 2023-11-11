@@ -35,6 +35,7 @@
             <directory>target/${project.name}-${project.version}/</directory>
             <includes>
                 <include>*.js</include>
+                <include>*.js.map</include>
             </includes>
             <outputDirectory></outputDirectory>
         </fileSet>

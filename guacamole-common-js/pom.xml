@@ -101,27 +101,29 @@
 
             <!-- JS/CSS Minification Plugin -->
             <plugin>
-                <groupId>com.github.buckelieg</groupId>
-                <artifactId>minify-maven-plugin</artifactId>
+                <groupId>com.github.blutorange</groupId>
+                <artifactId>closure-compiler-maven-plugin</artifactId>
+                <version>2.21.0</version>
+                <configuration>
+                    <baseSourceDir>./src/main/webapp</baseSourceDir>
+                    <baseTargetDir>${project.build.directory}</baseTargetDir>
+                </configuration>
                 <executions>
                     <execution>
                         <id>default-minify</id>
                         <configuration>
-
+                            <sourceDir>/</sourceDir>
+                            <targetDir>/${project.build.finalName}</targetDir>
                             <charset>UTF-8</charset>
-                            <jsEngine>CLOSURE</jsEngine>
-
-                            <jsSourceDir>/</jsSourceDir>
-                            <jsTargetDir>/</jsTargetDir>
-                            <jsFinalFile>all.js</jsFinalFile>
-
-                            <jsSourceFiles>
-                                <jsSourceFile>common/license.js</jsSourceFile> 
-                            </jsSourceFiles>
-
-                            <jsSourceIncludes>
-                                <jsSourceInclude>modules/**/*.js</jsSourceInclude>
-                            </jsSourceIncludes>
+                            <closureCompilationLevel>SIMPLE_OPTIMIZATIONS</closureCompilationLevel> 
+                            <sourceIncludes>
+                                <sourceInclude>modules/**/*.js</sourceInclude>
+                            </sourceIncludes>
+                            <outputFilename>all.min.js</outputFilename>
+                            <includes>
+                                <includes>common/license.js</includes>
+                                <includes>modules/*.js</includes>
+                            </includes>
 
                         </configuration>
                         <goals>
