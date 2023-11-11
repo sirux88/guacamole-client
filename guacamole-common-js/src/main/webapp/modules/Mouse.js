@@ -692,8 +692,8 @@ Guacamole.Mouse.Event.Target = function MouseEventTarget() {
      */
     this.press = function press(button, events) {
         // Handle 4/5 mouse button only on true fullscreen mode
-        if((button==Guacamole.Mouse.State.Buttons.FIFTH || button==Guacamole.Mouse.State.Buttons.FOURTH)&&!document.fullscreenElement) 
-            return;
+        //if((button==Guacamole.Mouse.State.Buttons.FIFTH || button==Guacamole.Mouse.State.Buttons.FOURTH)&&!document.fullscreenElement) 
+        //    return;
         
         if (!this.currentState[button]) {
             this.currentState[button] = true;
